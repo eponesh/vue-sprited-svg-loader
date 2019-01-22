@@ -1,7 +1,7 @@
 {
     "name": "vue-sprited-svg-loader",
-    "version": "0.0.1f",
-    "description": "Simple svg sprite sheet webpack loader for Vue to use .svg files as component using sprite sheet",
+    "version": "0.1.0",
+    "description": "Simple svg sprite sheet webpack loader for Vue to use .svg files as component using sprite.",
     "main": "index.js",
     "keywords": [
         "vue-sprited-svg-loader",
@@ -14,9 +14,19 @@
         "loader"
     ],
     "author": "Eponesh",
-    "license": "ISC",
+    "license": "MIT",
     "homepage": "https://github.com/eponesh/vue-sprited-svg-loader",
     "repository": "github:eponesh/vue-sprited-svg-loader",
+    "bugs": "https://github.com/eponesh/vue-sprited-svg-loader/issues",
+    "files": [
+        "lib/**",
+        "index.js",
+        "readme.md",
+        "LICENSE"
+    ],
+    "engines": {
+        "node": ">=6"
+    },
     "devDependencies": {
         "loader-utils": "^1.2.3"
     }
