@@ -1,7 +1,7 @@
 # vue-sprited-svg-loader
 Simple svg sprite sheet webpack loader for Vue to use .svg files as component using sprite sheet.
 
-## Usage
+## Install
 
 Requires `svg-sprite-loader` as first loader.
 
