@@ -1,8 +1,11 @@
 {
     "name": "vue-sprited-svg-loader",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Simple svg sprite sheet webpack loader for Vue to use .svg files as component using sprite.",
     "main": "index.js",
+    "scripts": {
+        "test": "jest"
+    },
     "keywords": [
         "vue-sprited-svg-loader",
         "vue",
@@ -28,6 +31,24 @@
         "node": ">=6"
     },
     "devDependencies": {
-        "loader-utils": "^1.2.3"
+        "babel-core": "^6.26.3",
+        "babel-jest": "^23.6.0",
+        "babel-polyfill": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
+        "jest": "^23.6.0",
+        "loader-utils": "^1.2.3",
+        "memory-fs": "^0.4.1",
+        "regenerator-runtime": "^0.13.1",
+        "svg-sprite-loader": "^4.1.3",
+        "svgo": "^1.1.1",
+        "svgo-loader": "^2.2.0",
+        "vue": "^2.5.22",
+        "webpack": "^4.29.0"
+    },
+    "jest": {
+        "browser": true,
+        "setupFiles": [
+            "<rootDir>/jest.init.js"
+        ]
     }
 }

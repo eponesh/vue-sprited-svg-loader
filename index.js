@@ -28,14 +28,16 @@ module.exports = function (source) {
 
     const style = JSON.stringify(withStyle ? SVG_STYLE : {});
 
-    const resolvedPath = require.resolve("./lib/createSvgComponent");
+    const resolvedPath = require.resolve('./lib/createSvgComponent');
     const importPath = loaderUtils.stringifyRequest(this, resolvedPath);
 
-    const modifiedSource = `${source.replace(/export.*/, '')}
+    const completedModule = (`
         import createSvgComponent from ${importPath};
         var component = createSvgComponent("#${id}", ${style}, "${customClass}");
         export default component;
-    `;
+    `).replace(/\s{2,}/g, '\n');
+
+    const modifiedSource = `${source.replace(/export.*/, '')}${completedModule}`;
 
     return modifiedSource;
 }
