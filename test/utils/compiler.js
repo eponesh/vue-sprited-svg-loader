@@ -30,12 +30,8 @@ module.exports = (fixture, options = {}) => {
 
     compiler.outputFileSystem = new memoryfs();
 
-    return new Promise((resolve, reject) => {
-        compiler.run((err, stats) => {
-            if (err || stats.hasErrors()) {
-                reject(err);
-            }
-
+    return new Promise((resolve) => {
+        compiler.run((_, stats) => {
             resolve(stats);
         });
     });
