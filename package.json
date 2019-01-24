@@ -4,7 +4,9 @@
     "description": "Simple svg sprite sheet webpack loader for Vue to use .svg files as component using sprite.",
     "main": "index.js",
     "scripts": {
-        "test": "jest"
+        "test": "jest",
+        "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
+        "ci": "npm run test"
     },
     "keywords": [
         "vue-sprited-svg-loader",
@@ -35,6 +37,7 @@
         "babel-jest": "^23.6.0",
         "babel-polyfill": "^6.26.0",
         "babel-preset-env": "^1.7.0",
+        "coveralls": "^3.0.2",
         "jest": "^23.6.0",
         "loader-utils": "^1.2.3",
         "memory-fs": "^0.4.1",
