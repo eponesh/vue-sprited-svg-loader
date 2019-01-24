@@ -1,4 +1,9 @@
 # vue-sprited-svg-loader
+
+[![Build Status](https://travis-ci.org/eponesh/vue-sprited-svg-loader.svg?branch=master)](https://travis-ci.org/eponesh/vue-sprited-svg-loader)
+[![Coverage Status](https://coveralls.io/repos/github/eponesh/vue-sprited-svg-loader/badge.svg)](https://coveralls.io/github/eponesh/vue-sprited-svg-loader)
+[![npm version](https://badge.fury.io/js/vue-sprited-svg-loader.svg)](https://badge.fury.io/js/vue-sprited-svg-loader)
+
 Simple svg sprite sheet webpack loader for Vue to use .svg files as component using sprite sheet.
 
 ## Install
