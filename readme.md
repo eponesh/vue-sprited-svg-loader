@@ -6,6 +6,10 @@
 
 Simple svg sprite sheet webpack loader for Vue to use .svg files as component using sprite sheet.
 
+See [Demo Example](https://eponesh.github.io/vue-sprited-svg-loader/examples/dist/index.html).
+
+[![example image](https://pp.userapi.com/c849520/v849520523/11314b/0ybU6D51npA.jpg)](https://eponesh.github.io/vue-sprited-svg-loader/examples/dist/index.html)
+
 ## Install
 
 Requires `svg-sprite-loader` as first loader.
@@ -52,6 +56,26 @@ export default {
 </div>
 ```
 
+## Usage inside Slot
+
+By default component has slot name `icon`.
+
+`Button.vue`
+```html
+<button class="button">
+    <slot name="icon"></slot>
+    <slot></slot>
+</button>
+```
+
+`App.vue`
+```html
+<VueButton>
+    <IconFirst />
+    Hello World
+</VueButton>
+```
+
 ## Options
 
 ```js
@@ -60,7 +84,8 @@ export default {
         loader: 'vue-sprited-svg-loader',
         options: {
             withStyle: true,
-            customClass: 'icon'
+            customClass: 'icon',
+            slotName: 'icon'
         }
     },
     'svg-sprite-loader'
@@ -85,4 +110,12 @@ Add custom class to component
 
 ```html
 <svg class="customClass"> ... </svg>
+```
+
+### slotName: `string` = 'icon'
+
+Add custom slot name to component
+
+```html
+<svg slot="slotName"> ... </svg>
 ```

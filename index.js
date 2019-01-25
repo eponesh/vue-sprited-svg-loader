@@ -1,4 +1,6 @@
 const loaderUtils = require('loader-utils');
+const validateOptions = require('schema-utils');
+const schema = require('./schema.json');
 
 /**
  * Helpful styles to provide coloring and fit svg
@@ -16,16 +18,16 @@ const SVG_STYLE = {
  * @returns { string } - vue functional component
  */
 module.exports = function (source) {
-    if (this.cacheable) {
-        this.cacheable(true);
-    }
+    const options = { ...loaderUtils.getOptions(this) };
+    validateOptions(schema, options, 'Vue sprited svg loader');
 
-    const id = loaderUtils.interpolateName(this, '[name]', {});
     const {
         withStyle = false,
-        customClass = ''
-    } = loaderUtils.getOptions(this) || {};
+        customClass = '',
+        slotName = 'icon',
+    } = options;
 
+    const id = loaderUtils.interpolateName(this, '[name]', {});
     const style = JSON.stringify(withStyle ? SVG_STYLE : {});
 
     const resolvedPath = require.resolve('./lib/createSvgComponent');
@@ -33,7 +35,7 @@ module.exports = function (source) {
 
     const completedModule = (`
         import createSvgComponent from ${importPath};
-        var component = createSvgComponent("#${id}", ${style}, "${customClass}");
+        var component = createSvgComponent("#${id}", ${style}, "${customClass}", "${slotName}");
         export default component;
     `).replace(/\s{2,}/g, '\n');
 

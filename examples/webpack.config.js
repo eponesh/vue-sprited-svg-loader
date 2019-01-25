@@ -10,7 +10,6 @@ module.exports = {
                     {
                         loader: path.resolve('../index.js'),
                         options: {
-                            withStyle: true,
                             customClass: 'icon',
                         }
                     },

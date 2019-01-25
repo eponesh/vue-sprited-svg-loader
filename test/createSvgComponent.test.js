@@ -1,5 +1,6 @@
 import createSvgComponent from '../lib/createSvgComponent';
 import Vue from 'vue/dist/vue.js';
+import VueButton from '../examples/sources/components/VueButton';
 
 const stubs = [
     {
@@ -7,7 +8,8 @@ const stubs = [
         style: {
             width: '100%'
         },
-        className: 'icon'
+        className: 'icon',
+        slotName: 'iconSlot'
     }
 ];
 
@@ -130,6 +132,44 @@ describe('[vue-sprited-svg-loader]: createSvgComponent', () => {
                 ...style,
                 ...extendStyle
             });
+        });
+    });
+
+    test('should has default slot name "icon" and substitute into button', async () => {
+        const { id, style, className } = stubs[0];
+        const component = createSvgComponent(id, style, className, 'icon');
+
+        return new Promise (resolve => new Vue({
+            components: {
+                VueButton,
+                icon: component
+            },
+            template: `<div><VueButton @slots="loadSlots"><icon></icon></VueButton></div>`,
+            methods: {
+                loadSlots (slots) {
+                    resolve(slots);
+                }
+            }
+        }).$mount()).then((slots) => {
+            expect(!!slots.icon).toBe(true);
+        });
+    });
+
+    test('should has default slot name "icon"', async () => {
+        const { id, style, className, slotName } = stubs[0];
+        const component = createSvgComponent(id, style, className, slotName);
+
+        return new Promise (resolve => new Vue({
+            components: {
+                VueButton,
+                icon: component
+            },
+            template: `<icon></icon>`,
+            mounted () {
+                resolve(this._vnode.data.slot);
+            }
+        }).$mount()).then((slot) => {
+            expect(slot).toBe(slotName);
         });
     });
 });

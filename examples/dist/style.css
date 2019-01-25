@@ -1,0 +1,96 @@
+body, html {
+    background-color: #009688;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+}
+
+#app {
+    flex-grow: 1;
+}
+
+.app,
+.button {
+    flex-direction: column;
+}
+
+.app,
+.app__buttons,
+.button,
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app__buttons {
+    flex-wrap: wrap;
+}
+
+h1,
+.description {
+    display: block;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+}
+
+.icon {
+    width: 64px;
+    height: 64px;
+    max-width: 64px;
+    max-height: 64px;
+    fill: currentColor;
+}
+
+.button {
+    margin: 0 16px;
+    outline: none;
+    border: none;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #009688;
+}
+
+.button__icon {
+    margin-bottom: 8px;
+}
+
+.iconSvg_first {
+    margin: 16px 32px;
+    width: 196px;
+    height: 196px;
+    max-width: 196px;
+    max-height: 196px;
+}
+
+.footer {
+    background-color: #f2f2f2;
+    min-height: 50px;
+    height: 50px;
+}
+
+@media screen and (max-width: 500px) {
+    .button {
+        margin-top: 8px;
+    }
+
+    .iconSvg_first {
+        order: 2;
+        margin: 8px;
+        width: 128px;
+        height: 128px;
+        max-width: 128px;
+        max-height: 128px;
+    }
+}

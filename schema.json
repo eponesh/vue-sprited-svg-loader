@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "properties": {
+        "withStyle": {
+            "type": [ "boolean" ]
+        },
+        "customClass": {
+            "type": [ "string" ]
+        },
+        "slotName": {
+            "type": [ "string" ]
+        }
+    }
+}

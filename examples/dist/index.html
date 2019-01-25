@@ -4,23 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Vue svg sprite sheet loader</title>
-    <style>
-        #app {
-            display: flex;
-        }
-
-        .iconSvg_first {
-            order: 1;
-        }
-    </style>
+    <title>Vue sprited svg loader</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
-        <Icon-First class="iconSvg iconSvg_first" style="color: #ccc;"></Icon-First>
-        <Icon-Second :class="{ iconSvg: true }" style="width: 64px; height: 64px;"></Icon-Second>
-        <Icon-Third :style="{ color: '#16A085', width: '64px', height: '64px' }"></Icon-Third>
+        <h1>Vue sprited svg</h1>
+        <span class="description">Import <b>svg</b> as <b>component</b>,<br>using sprite</span>
+        <App></App>
     </div>
+    <footer class="footer">
+        <span>Sergey Eponeshnikov,
+            <a href="https://github.com/eponesh/vue-sprited-svg-loader">GitHub</a>
+             <a href="https://www.npmjs.com/package/vue-sprited-svg-loader">NPM</a>
+        </span>
+    </footer>
     <script src="./main.js"></script>
 </body>
 </html>
