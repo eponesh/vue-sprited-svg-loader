@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
     entry: './sources/index.js',
+    mode: 'development',
     module: {
         rules: [
             {

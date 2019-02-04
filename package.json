@@ -1,7 +1,7 @@
 {
     "name": "vue-sprited-svg-loader",
-    "version": "1.0.4",
-    "description": "Simple svg sprite sheet webpack loader for Vue to use .svg files as component using sprite.",
+    "version": "1.0.5",
+    "description": "Simple svg sprite webpack loader for Vue to use .svg files as component. Based on svg-sprite-loader.",
     "main": "index.js",
     "scripts": {
         "test": "jest",
@@ -13,6 +13,7 @@
         "vue-sprited-svg-loader",
         "vue",
         "vue.js",
+        "front-end",
         "svg",
         "svg-sprite",
         "sprite",

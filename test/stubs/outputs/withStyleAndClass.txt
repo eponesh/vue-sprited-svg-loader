@@ -9,5 +9,5 @@ var symbol = new SpriteSymbol({
 var result = sprite.add(symbol);
 
 import createSvgComponent from "../../lib/createSvgComponent.js";
-var component = createSvgComponent("#icon-3", {"width":"100%","height":"100%","fill":"currentColor"}, "icon", "icon");
+var component = createSvgComponent(symbol.id, {"width":"100%","height":"100%","fill":"currentColor"}, "icon", "icon");
 export default component;

@@ -48,7 +48,7 @@ describe('[vue-sprited-svg-loader]: createSvgComponent', () => {
             const currentId = $el.querySelector('use')
                 .getAttributeNS('http://www.w3.org/1999/xlink', 'href');
 
-            expect(currentId).toBe(id);
+            expect(currentId).toBe(`#${id}`);
             expect($el.getAttribute('class')).toBe(className);
             expect($el.style._values).toEqual(style);
         });

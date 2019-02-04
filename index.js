@@ -14,7 +14,7 @@ const SVG_STYLE = {
 /**
  * Takes svg converted source from "svg-sprite-loader"
  * and converts to vue component with svg from sprite
- * @prop { string } source - converted svg file
+ * @param { string } source - converted svg file
  * @returns { string } - vue functional component
  */
 module.exports = function (source) {
@@ -27,7 +27,6 @@ module.exports = function (source) {
         slotName = 'icon',
     } = options;
 
-    const id = loaderUtils.interpolateName(this, '[name]', {});
     const style = JSON.stringify(withStyle ? SVG_STYLE : {});
 
     const resolvedPath = require.resolve('./lib/createSvgComponent');
@@ -35,7 +34,7 @@ module.exports = function (source) {
 
     const completedModule = (`
         import createSvgComponent from ${importPath};
-        var component = createSvgComponent("#${id}", ${style}, "${customClass}", "${slotName}");
+        var component = createSvgComponent(symbol.id, ${style}, "${customClass}", "${slotName}");
         export default component;
     `).replace(/\s{2,}/g, '\n');
 
