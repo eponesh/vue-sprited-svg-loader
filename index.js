@@ -3,15 +3,6 @@ const validateOptions = require('schema-utils');
 const schema = require('./schema.json');
 
 /**
- * Helpful styles to provide coloring and fit svg
- */
-const SVG_STYLE = {
-    width: '100%',
-    height: '100%',
-    fill: 'currentColor'
-};
-
-/**
  * Takes svg converted source from "svg-sprite-loader"
  * and converts to vue component with svg from sprite
  * @param { string } source - converted svg file
@@ -22,19 +13,16 @@ module.exports = function (source) {
     validateOptions(schema, options, 'Vue sprited svg loader');
 
     const {
-        withStyle = false,
         customClass = '',
         slotName = 'icon',
     } = options;
-
-    const style = JSON.stringify(withStyle ? SVG_STYLE : {});
 
     const resolvedPath = require.resolve('./lib/createSvgComponent');
     const importPath = loaderUtils.stringifyRequest(this, resolvedPath);
 
     const completedModule = (`
         import createSvgComponent from ${importPath};
-        var component = createSvgComponent(symbol.id, ${style}, "${customClass}", "${slotName}");
+        var component = createSvgComponent(symbol.id, "${customClass}", "${slotName}");
         export default component;
     `).replace(/\s{2,}/g, '\n');
 

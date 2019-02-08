@@ -51,16 +51,16 @@ export default {
 ### Template
 ```html
 <div class="icons-example">
-    <IconFirst style="color: red"/>
-    <IconSecond class="second-icon"/>
+    <IconFirst class="first-icon"/>
+    <IconSecond :style="{ fill: 'currentColor', color: 'red' }"/>
 </div>
 ```
 
 ## Usage inside Slot
 
-By default component has slot name `icon`.
+By default component has slot named `icon`.
 
-`Button.vue`
+`VueButton.vue`
 ```html
 <button class="button">
     <slot name="icon"></slot>
@@ -72,7 +72,7 @@ By default component has slot name `icon`.
 ```html
 <VueButton>
     <IconFirst />
-    Hello World
+    Press Me
 </VueButton>
 ```
 
@@ -83,25 +83,12 @@ By default component has slot name `icon`.
     {
         loader: 'vue-sprited-svg-loader',
         options: {
-            withStyle: true,
             customClass: 'icon',
             slotName: 'icon'
         }
     },
     'svg-sprite-loader'
 ]
-```
-
-### withStyle: `boolean` = false
-
-Load with helpful styles
-
-```css
-{
-    width: 100%;
-    height: 100%;
-    fill: currentColor;
-}
 ```
 
 ### customClass: `string` = ''
