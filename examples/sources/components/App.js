@@ -49,6 +49,23 @@ export default {
                     <template name="icon">Press me</template>
                 </VueButton>
             </div>
+            <span class="description">Using sizes</span>
+            <div class="app__sizes">
+                <div class="size">
+                    <span class="description">width = 48</span>
+                    <Icon-Second width="48"></Icon-Second>
+                </div>
+
+                <div class="size">
+                    <span class="description">height = 64</span>
+                    <Icon-Third height="64"></Icon-Third>
+                </div>
+
+                <div class="size">
+                    <span class="description">size = 32</span>
+                    <Icon-First size="32"></Icon-First>
+                </div>
+            </div>
         </div>
     `,
 }

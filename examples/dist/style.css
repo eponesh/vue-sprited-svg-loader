@@ -21,7 +21,9 @@ body, html {
 
 .app,
 .app__buttons,
+.app__sizes,
 .button,
+.size,
 .footer {
     display: flex;
     justify-content: center;
@@ -30,6 +32,10 @@ body, html {
 
 .app__buttons {
     flex-wrap: wrap;
+}
+
+.app__sizes {
+    align-items: flex-start;
 }
 
 h1,
@@ -78,6 +84,15 @@ h1,
     background-color: #f2f2f2;
     min-height: 50px;
     height: 50px;
+}
+
+.size {
+    flex-direction: column;
+    margin: 16px;
+}
+
+.size > .icon {
+    margin-top: 8px;
 }
 
 @media screen and (max-width: 500px) {

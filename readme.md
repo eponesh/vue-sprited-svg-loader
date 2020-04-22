@@ -76,6 +76,29 @@ By default component has slot named `icon`.
 </VueButton>
 ```
 
+## Props
+
+### width: `string | number`
+Append width to style in `pixels`.
+
+```html
+<MyIcon width="24" />
+```
+
+### height: `string | number`
+Append height to style in `pixels`.
+
+```html
+<MyIcon height="24" />
+```
+
+### size: `string | number`
+Append both width and height to style in `pixels`.
+
+```html
+<MyIcon size="24" />
+```
+
 ## Options
 
 ```js
