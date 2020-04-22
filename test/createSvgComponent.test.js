@@ -123,4 +123,50 @@ describe('[vue-sprited-svg-loader]: createSvgComponent', () => {
             expect(slot).toBe(slotName);
         });
     });
+
+    test('should add width style', async () => {
+        const { id, className } = stubs[0];
+        const component = createSvgComponent(id, className);
+
+        return new Promise (resolve => new Vue({
+            components: { icon: component },
+            template: `<icon width="128"></icon>`,
+            mounted () {
+                resolve(this.$el);
+            }
+        }).$mount()).then(($el) => {
+            expect($el.getAttribute('style')).toBe('width: 128px;');
+        });
+    });
+
+
+    test('should add height to style', async () => {
+        const { id, className } = stubs[0];
+        const component = createSvgComponent(id, className);
+
+        return new Promise (resolve => new Vue({
+            components: { icon: component },
+            template: `<icon height="32"></icon>`,
+            mounted () {
+                resolve(this.$el);
+            }
+        }).$mount()).then(($el) => {
+            expect($el.getAttribute('style')).toBe('height: 32px;');
+        });
+    });
+
+    test('should add width and height to style using size', async () => {
+        const { id, className } = stubs[0];
+        const component = createSvgComponent(id, className);
+
+        return new Promise (resolve => new Vue({
+            components: { icon: component },
+            template: `<icon size="24"></icon>`,
+            mounted () {
+                resolve(this.$el);
+            }
+        }).$mount()).then(($el) => {
+            expect($el.getAttribute('style')).toBe('width: 24px; height: 24px;');
+        });
+    });
 });

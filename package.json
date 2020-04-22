@@ -1,10 +1,11 @@
 {
     "name": "vue-sprited-svg-loader",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "Simple svg sprite webpack loader for Vue to use .svg files as component. Based on svg-sprite-loader. With typescript support.",
     "main": "index.js",
     "scripts": {
         "test": "jest",
+        "coverage": "jest --coverage",
         "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
         "ci": "npm run coveralls",
         "generate:stubs": "node test/stubs/generateStubs.js"
